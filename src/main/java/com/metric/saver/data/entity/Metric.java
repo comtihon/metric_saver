@@ -57,4 +57,14 @@ public class Metric {
     public void setAt(Date at) {
         this.at = at;
     }
+
+    @Override
+    public String toString() {
+        return "Metric{" +
+                "metricId='" + metricId + '\'' +
+                ", sensorUuid='" + sensorUuid + '\'' +
+                ", at=" + at +
+                ", temperature=" + temperature +
+                '}';
+    }
 }

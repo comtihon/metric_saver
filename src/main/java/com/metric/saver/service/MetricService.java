@@ -32,12 +32,14 @@ public class MetricService {
     @Transactional
     public void saveMetric(TemperatureDTO dto) {
         Metric metric = modelMapper.map(dto, Metric.class);
+        LOGGER.debug("Save {}", metric);
         metricDaoService.save(metric);
     }
 
     @Transactional
     public void saveEvent(EventDTO dto) {
         Event event = modelMapper.map(dto, Event.class);
+        LOGGER.debug("Save {}", event);
         eventDaoService.save(event);
     }
 }

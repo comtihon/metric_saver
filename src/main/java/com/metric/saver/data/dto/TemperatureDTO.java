@@ -44,6 +44,7 @@ public class TemperatureDTO {
         return "TemperatureDTO{" +
                 "sensorUuid='" + sensorUuid + '\'' +
                 ", temperature=" + temperature +
+                ", at=" + at +
                 '}';
     }
 
