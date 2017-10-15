@@ -5,7 +5,7 @@ import java.util.Date;
 public class TemperatureDTO {
     private String sensorUuid;
     private double temperature;
-    private Date date;
+    private Date at;
 
     public TemperatureDTO() {
     }
@@ -31,12 +31,12 @@ public class TemperatureDTO {
         this.temperature = temperature;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getAt() {
+        return at;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setAt(Date at) {
+        this.at = at;
     }
 
     @Override
