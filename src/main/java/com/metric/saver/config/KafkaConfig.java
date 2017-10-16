@@ -86,9 +86,4 @@ public class KafkaConfig {
         factory.setConsumerFactory(eventConsumerFactory());
         return factory;
     }
-
-    @Bean
-    public KafkaReceiver receiver() {
-        return new KafkaReceiver();
-    }
 }
