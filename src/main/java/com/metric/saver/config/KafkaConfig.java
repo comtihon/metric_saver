@@ -51,10 +51,9 @@ public class KafkaConfig {
     public ConsumerFactory<String, TemperatureDTO> temperatureConsumerFactory() {
         Map<String, Object> props = new HashMap<>();
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
-        props.put(ConsumerConfig.GROUP_ID_CONFIG, "temperature");
+        props.put(ConsumerConfig.GROUP_ID_CONFIG, "saver");
         props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, true);
-        props.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, 100);
-        props.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, 15000);
+        props.put(ConsumerConfig.FETCH_MAX_WAIT_MS_CONFIG, 1000);
         JsonDeserializer<TemperatureDTO> jsonDeserializer = new JsonDeserializer<>(TemperatureDTO.class);
         return new DefaultKafkaConsumerFactory<>(props, new StringDeserializer(), jsonDeserializer);
     }
@@ -63,10 +62,9 @@ public class KafkaConfig {
     public ConsumerFactory<String, EventDTO> eventConsumerFactory() {
         Map<String, Object> props = new HashMap<>();
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
-        props.put(ConsumerConfig.GROUP_ID_CONFIG, "event");
+        props.put(ConsumerConfig.GROUP_ID_CONFIG, "saver");
         props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, true);
-        props.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, 100);
-        props.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, 15000);
+        props.put(ConsumerConfig.FETCH_MAX_WAIT_MS_CONFIG, 1000);
         JsonDeserializer<EventDTO> jsonDeserializer = new JsonDeserializer<>(EventDTO.class);
         return new DefaultKafkaConsumerFactory<>(props, new StringDeserializer(), jsonDeserializer);
     }

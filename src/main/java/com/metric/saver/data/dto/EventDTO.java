@@ -22,16 +22,32 @@ public class EventDTO {
         return sensorUuid;
     }
 
+    public void setSensorUuid(String sensorUuid) {
+        this.sensorUuid = sensorUuid;
+    }
+
     public double getTemperature() {
         return temperature;
+    }
+
+    public void setTemperature(double temperature) {
+        this.temperature = temperature;
     }
 
     public Date getAt() {
         return at;
     }
 
+    public void setAt(Date at) {
+        this.at = at;
+    }
+
     public EventType getType() {
         return type;
+    }
+
+    public void setType(EventType type) {
+        this.type = type;
     }
 
     @Override
