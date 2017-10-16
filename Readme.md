@@ -9,7 +9,7 @@ for kafka and `spring.datasource.url` for postgres.
 
 ### In docker
 
-    sudo ./gradlew build buildDocker
+    sudo ./gradlew build buildDocker -x test -x test_integration
     sudo docker run -t com.metric.saver
 
 ### In OS
